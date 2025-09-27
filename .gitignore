@@ -1,0 +1,20 @@
+# Ignore local Spring Boot property file with sensitive info
+/src/main/resources/application-local.properties
+
+# Ignore database files
+*.db
+
+# Ignore IntelliJ IDEA files
+/.idea
+*.iml
+out/
+
+# Ignore VSCode files
+.vscode/
+
+# Ignore Maven/Gradle build folders
+/target/
+/build/
+
+# Logs
+*.log
