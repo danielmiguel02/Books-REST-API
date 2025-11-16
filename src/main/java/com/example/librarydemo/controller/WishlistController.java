@@ -71,6 +71,6 @@ public class WishlistController {
         }
 
         wishlistRepository.saveAll(books);
-        return ResponseEntity.ok("Books added to wishlist successfully!");
+        return ResponseEntity.ok("Books added to wishlist successfully! ");
     }
 }
