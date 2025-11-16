@@ -15,6 +15,7 @@ public class Book {
     private String title;
     private String author;
     private String category;
+    private boolean wishlisted;
 
     // Default constructor
     public Book() {}
@@ -38,4 +39,7 @@ public class Book {
 
     public String getCategory() { return category; }
     public void setCategory(String category) { this.category = category; }
+
+    public boolean isWishlisted() { return wishlisted; }
+    public void setWishlisted(boolean wishlisted) { this.wishlisted = wishlisted; }
 }

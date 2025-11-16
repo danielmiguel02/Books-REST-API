@@ -13,6 +13,8 @@ public interface BookRepository extends JpaRepository<Book, Long> {
     void deleteByTitle(String title);
 
     boolean existsByTitle(String title);
+    boolean existsByAuthor(String author);
+    boolean existsByTitleAndAuthor(String title, String author);
 
     Page<Book> findAllByTitleContainingIgnoreCase(String title, Pageable pageable);
     Page<Book> findAllByAuthorContainingIgnoreCase(String author, Pageable pageable);

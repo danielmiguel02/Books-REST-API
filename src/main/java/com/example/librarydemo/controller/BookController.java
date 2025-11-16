@@ -32,10 +32,6 @@ public class BookController {
         return bookRepository.findAll(pageable);
     }
 
-//    private static PageRequest getPageable(int page, int size) {
-//        return PageRequest.of(page, size);
-//    }
-
     @GetMapping("/title/{title}")
     public ResponseEntity<?> getBookByTitle(
             @PathVariable String title,
@@ -82,7 +78,6 @@ public class BookController {
         return ResponseEntity.ok(books);
     }
 
-    // Implement getting by category / implement category
     @GetMapping("/category/{category}")
     public ResponseEntity<?> getBookByCategory(
             @PathVariable String category,
@@ -118,9 +113,6 @@ public class BookController {
                 return ResponseEntity
                         .badRequest()
                         .body("Book " + (i + 1) + " author is required!");
-
-            // Force ID to null to ensure DB generates it
-            book.setId(null);
         }
 
         // Save books

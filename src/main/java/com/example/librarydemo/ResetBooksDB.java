@@ -2,6 +2,7 @@ package com.example.librarydemo;
 
 import com.example.librarydemo.model.Book;
 import com.example.librarydemo.repository.BookRepository;
+import com.example.librarydemo.repository.WishlistRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -13,6 +14,7 @@ import java.util.List;
 @Component
 public class ResetBooksDB {
     private final BookRepository bookRepository;
+    private final WishlistRepository wishlistRepository;
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -65,8 +67,9 @@ public class ResetBooksDB {
             new Book("To Kill a Mockingbird", "Harper Lee", "Classic Literature")
     ));
 
-    public ResetBooksDB(BookRepository bookRepository) {
+    public ResetBooksDB(BookRepository bookRepository, WishlistRepository wishlistRepository) {
         this.bookRepository = bookRepository;
+        this.wishlistRepository = wishlistRepository;
     }
 
     @Transactional
